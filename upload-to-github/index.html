@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="A small galaxy of red and white roses, made for you.">
+  <title>For My Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Sarabun:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ================= GALAXY ================= -->
+  <div id="galaxy">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="bigword" aria-hidden="true">You are everything ✨</div>
+    <div id="stage"></div>
+    <div class="ui">
+      <div class="top">
+        <span class="pill" id="pill">Galaxy of My Love</span>
+        <span class="eyebrow" id="eyebrow">A small universe for you</span>
+        <h1 id="title"></h1>
+      </div>
+      <div class="bottom">
+        <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
+        <button class="btn" id="next" type="button">Start</button>
+      </div>
+    </div>
+    <button class="btn" id="giftsToggle" type="button">💌 Gifts</button>
+    <aside id="gifts" aria-label="Gifts">
+      <div class="g movie" id="movieCard">
+        <img src="poster.jpg" alt="">
+        <span id="movieOpen" style="cursor:pointer"><b id="movieTitle"></b><small id="movieSub">Tap to watch<span
+              class="eq"> · playing ♪</span></small></span>
+        <button class="play" id="moviePlay" type="button" aria-label="Play or pause"><svg width="12" height="12"
+            viewBox="0 0 12 12">
+            <path id="playIcon" d="M3 1.5v9l7.5-4.5z" fill="#14402f" />
+          </svg></button>
+      </div>
+      <div class="g note">
+        <h4>A little note</h4>
+        <p id="noteText"></p><span class="sign" id="noteSign"></span>
+      </div>
+
+
+    </aside>
+
+    <div class="veil" id="lastThing">
+      <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="ltTitle">
+        <h2 id="ltTitle">One last thing for you</h2>
+        <p id="ltText"></p>
+        <span class="sign" id="ltSign"></span>
+        <button class="btn primary" id="explore" type="button">Explore the galaxy ✨</button>
+        <button class="btn" id="again1" type="button">See it again from the start</button>
+      </div>
+    </div>
+
+    <div class="veil" id="memVeil">
+      <div class="memory" role="dialog" aria-modal="true" aria-labelledby="memTitle">
+        <button class="x" id="memClose" type="button" aria-label="Close">✕</button>
+        <img id="memImg" alt="">
+        <p class="place" id="memPlace"></p>
+        <h3 id="memTitle"></h3>
+        <p class="date" id="memDate"></p>
+      </div>
+    </div>
+
+    <div class="veil" id="vidVeil">
+      <div class="player" role="dialog" aria-modal="true" aria-label="Our little movie">
+        <video id="vid" src="memories.mp4" poster="poster.jpg" playsinline controls loop
+          preload="metadata"></video>
+        <span class="cap" id="vidCap"></span>
+        <button class="x" id="vidClose" type="button" aria-label="Close">✕</button>
+      </div>
+    </div>
+
+    <div class="veil" id="finale">
+      <div class="wrap">
+        <div class="big">You are everything</div>
+        <p id="finaleText"></p>
+        <button class="btn" id="again2" type="button">See it again from the start</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BURST ================= -->
+  <canvas id="burst" aria-hidden="true"></canvas>
+
+  <!-- ================= INTRO ================= -->
+  <div id="intro">
+    <button id="gift" type="button" aria-label="Open the gift">
+      <svg viewBox="0 0 120 120">
+        <defs>
+          <pattern id="giftdots" width="12" height="12" patternUnits="userSpaceOnUse">
+            <rect width="12" height="12" fill="#f3e7d2" />
+            <circle cx="3" cy="3" r="1.6" fill="#b3122a" />
+            <circle cx="9" cy="9" r="1.6" fill="#b3122a" />
+          </pattern>
+          <linearGradient id="ribbon" x1="0" x2="1">
+            <stop offset="0" stop-color="#8e0c20" />
+            <stop offset=".5" stop-color="#d4183a" />
+            <stop offset="1" stop-color="#8e0c20" />
+          </linearGradient>
+        </defs>
+        <rect x="22" y="52" width="76" height="58" rx="3" fill="url(#giftdots)" />
+        <rect x="22" y="52" width="76" height="10" fill="#000" opacity=".08" />
+        <rect x="54" y="52" width="12" height="58" fill="url(#ribbon)" />
+        <g class="lid">
+          <rect x="16" y="38" width="88" height="17" rx="3" fill="url(#giftdots)" />
+          <rect x="53" y="38" width="14" height="17" fill="url(#ribbon)" />
+          <path d="M60 38 C44 18 26 24 34 34 C38 40 52 40 60 38Z" fill="#c4142c" />
+          <path d="M60 38 C76 18 94 24 86 34 C82 40 68 40 60 38Z" fill="#c4142c" />
+          <path d="M60 38 C50 26 40 28 42 33" fill="none" stroke="#7e0a1b" stroke-width="1.4" />
+          <path d="M60 38 C70 26 80 28 78 33" fill="none" stroke="#7e0a1b" stroke-width="1.4" />
+          <path d="M58 40 L46 62 L52 60 L56 66 Z M62 40 L74 62 L68 60 L64 66 Z" fill="#a50f25" />
+          <circle cx="60" cy="38" r="5" fill="#e0293f" />
+        </g>
+      </svg>
+    </button>
+    <div class="forlove">For My Love</div>
+    <div class="hint">Tap the gift</div>
+    <button class="heartbtn" id="heartbtn" type="button" aria-label="Open the gift">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.5 5c2 0 3.5 1.2 5.5 3.2C14 6.2 15.5 5 17.5 5 21 5 23 8.6 21.6 11.8 19.5 16.4 12 21 12 21z"
+          fill="#d4183a" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- ข้อความ/รูป/วิดีโอ แก้ได้ที่ js/config.js -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
